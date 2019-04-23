@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h3>Click sobre el enunciado del ejercicio.</h3>
+    <p id='ejercicio1' onclick='Ejercicio1()'> 1.- Identificar y solucionar el proble1a en el siguiente bloque de código para que se muestre la suma de los números ingresados </p>
+
+    <p id="ejercicio2" onclick='Ejercicio2()'> 2.- Identificar el/los problema(s) en el siguiente bloque de código.</p>
+    <ul>
+        <li>El alert debe mostrar el mensaje "Eres mayor de edad" si la edad ingresada fue igual o mayor a 18.</li>
+        <li> De lo contrario debe mostrar "Eres menor de edad".</li>
+    </ul>
+    <p id="ejercicio3" onclick="Ejercicio3()">
+          3.- El siguiente código muestra 'hola' varias veces, pero debería mostrar todos los días específicados en el array, además estos días deben mostrados como elementos de una lista ordenada.
+    </p>
+    <ol id="dias">
+        </ol>
+          
+        <p id="ejercicio4" onclick="Ejercicio4()">
+            4.- Utilizando la sentencia if detener el conteo regresivo cuando el valor llegue a cero y cambiar el texto de bomba por "BOOM!" y el background-color de body a rojo.</p>
+    
+            <h1 id="header-timer"> ¡¡¡ La bomba !!! </h1>
+            <h2 id="timer">4</h2>
+          <p id="ejercicio5" onclick="Ejercicio5()">
+                Ejercicio 5:
+         </p>
+            <ul>
+                    <li>El siguiente código corresponde a una calculadora incompleta.</li>
+                    <li>El botón '=' funciona evaluando la expresión dentro del input de texto.</li>
+                    <li>Se requiere:
+                    <ul>
+                    <li>Al presionar un dígito u operador este debe ser agregado al input.</li>
+                    <li>Agregar los dígitos faltantes.</li>
+                    <li>Agregar operadores faltantes (multiplicación y división).</li>
+                    <li>Agregar un botón para limpiar el input.</li>
+                    </ul>
+                    </li>
+                    </ul>
+
+                    <input type="text" name="calculator" value="">
+                    <br>
+                    <button class="btn" type="button" name="button">1</button>
+                    <button class="btn" type="button" name="button">2</button>
+                    <button class="btn" type="button" name="button">3</button>
+                    <button class="btn" type="button" name="button">4</button>
+                    <button class="btn" type="button" name="button">5</button>
+                    <button class="btn" type="button" name="button">6</button>
+                    <button class="btn" type="button" name="button">7</button>
+                    <button class="btn" type="button" name="button">8</button>
+                    <button class="btn" type="button" name="button">9</button>
+                    <br>
+                    <button class="btn" type="button" name="button">+</button>
+                    <button class="btn" type="button" name="button">-</button>
+                    <button class="btn" type="button" name="button">/</button>
+                    <button class="btn" type="button" name="button">*</button>
+                    <br>
+                    <button class="result" type="button" name="result" onclick="calcTotal()">=</button>
+                    <button class="result" type="button" name="result" onclick="limpiar()">Clear</button>
+
+</body>
+
+<script type="text/javascript">
+
+function Ejercicio1(){
+    $('#ejercicio1').css("font-size",20 + "px");
+    $('#ejercicio1').css("color", "green");
+    a = parseInt(prompt("ingresa un número"));
+    b = parseInt(prompt("ingresa otro número"));
+    alert("la suma es: " + (a + b) );
+}
+function Ejercicio2()
+{
+    $('#ejercicio2').css("font-size",20 + "px");
+    $('#ejercicio2').css("color", "green");
+   var edad = prompt("Ingresa tu edad");
+      if (parseInt(edad) >= 18){
+          alert('Eres mayor de edad');
+      }
+      else
+      {
+        alert('Eres menor de edad');
+      }
+}
+function Ejercicio3()
+{
+    $('#ejercicio3').css("font-size",20 + "px");
+    $('#ejercicio3').css("color", "green");
+    var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+      var parent_tag = document.getElementById('dias');
+      dias.forEach(function(x){
+
+      
+        var doc_element = document.createElement("p");
+        node = document.createTextNode(x);
+        doc_element.appendChild(node);
+        parent_tag.appendChild(doc_element);
+      });
+
+}
+function Ejercicio4(){
+    $('#ejercicio4').css("font-size",20 + "px");
+    $('#ejercicio4').css("color", "green");
+    var timer_tag = document.getElementById('timer');
+        var timer = timer_tag.innerHTML;
+        timer = parseInt(timer);
+    var MyVar = setInterval(function(){
+        
+          timer = timer - 1;
+          if (timer == 0){ $('#header-timer').text('BOOM!!'); StopTimer(MyVar);}
+          timer_tag.innerHTML = timer
+          
+        }, 1000);
+       
+
+}
+
+function StopTimer(MyVar){
+
+    clearInterval(MyVar);
+}
+function calcTotal(){
+    calcTotal();
+}
+function limpiar()
+{
+    $('input[name=calculator]').val('');
+    str = '';
+}
+var str = "";
+$("button[name^=button]").click(function(e) {
+
+        str = str + $(this).text();
+        $('input[name=calculator]').val(str);
+});
+
+
+
+
+     var result = document.getElementsByName("result")[0];
+      var calculator = document.getElementsByName("calculator")[0];
+      var calcTotal = function(){
+        calculator.value = eval(calculator.value);
+      }
+   
+    </script>
+
+</html>
