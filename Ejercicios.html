@@ -1,16 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .todo{
+			float: left;
+			cursor: pointer;
+		}
+
+		.done{
+			float: left;
+			margin-left: 100px;
+		}
+	</style>
 </head>
+
 <body>
     <h3>Click sobre el enunciado del ejercicio.</h3>
-    <p id='ejercicio1' onclick='Ejercicio1()'> 1.- Identificar y solucionar el proble1a en el siguiente bloque de código para que se muestre la suma de los números ingresados </p>
+    <p id='ejercicio1' onclick='Ejercicio1()'> 1.- Identificar y solucionar el proble1a en el siguiente bloque de
+        código para que se muestre la suma de los números ingresados </p>
 
     <p id="ejercicio2" onclick='Ejercicio2()'> 2.- Identificar el/los problema(s) en el siguiente bloque de código.</p>
     <ul>
@@ -18,137 +32,299 @@
         <li> De lo contrario debe mostrar "Eres menor de edad".</li>
     </ul>
     <p id="ejercicio3" onclick="Ejercicio3()">
-          3.- El siguiente código muestra 'hola' varias veces, pero debería mostrar todos los días específicados en el array, además estos días deben mostrados como elementos de una lista ordenada.
+        3.- El siguiente código muestra 'hola' varias veces, pero debería mostrar todos los días específicados en el
+        array, además estos días deben mostrados como elementos de una lista ordenada.
     </p>
     <ol id="dias">
-        </ol>
-          
-        <p id="ejercicio4" onclick="Ejercicio4()">
-            4.- Utilizando la sentencia if detener el conteo regresivo cuando el valor llegue a cero y cambiar el texto de bomba por "BOOM!" y el background-color de body a rojo.</p>
-    
-            <h1 id="header-timer"> ¡¡¡ La bomba !!! </h1>
-            <h2 id="timer">4</h2>
-          <p id="ejercicio5" onclick="Ejercicio5()">
-                Ejercicio 5:
-         </p>
-            <ul>
-                    <li>El siguiente código corresponde a una calculadora incompleta.</li>
-                    <li>El botón '=' funciona evaluando la expresión dentro del input de texto.</li>
-                    <li>Se requiere:
-                    <ul>
-                    <li>Al presionar un dígito u operador este debe ser agregado al input.</li>
-                    <li>Agregar los dígitos faltantes.</li>
-                    <li>Agregar operadores faltantes (multiplicación y división).</li>
-                    <li>Agregar un botón para limpiar el input.</li>
-                    </ul>
-                    </li>
-                    </ul>
+    </ol>
 
-                    <input type="text" name="calculator" value="">
-                    <br>
-                    <button class="btn" type="button" name="button">1</button>
-                    <button class="btn" type="button" name="button">2</button>
-                    <button class="btn" type="button" name="button">3</button>
-                    <button class="btn" type="button" name="button">4</button>
-                    <button class="btn" type="button" name="button">5</button>
-                    <button class="btn" type="button" name="button">6</button>
-                    <button class="btn" type="button" name="button">7</button>
-                    <button class="btn" type="button" name="button">8</button>
-                    <button class="btn" type="button" name="button">9</button>
-                    <br>
-                    <button class="btn" type="button" name="button">+</button>
-                    <button class="btn" type="button" name="button">-</button>
-                    <button class="btn" type="button" name="button">/</button>
-                    <button class="btn" type="button" name="button">*</button>
-                    <br>
-                    <button class="result" type="button" name="result" onclick="calcTotal()">=</button>
-                    <button class="result" type="button" name="result" onclick="limpiar()">Clear</button>
+    <p id="ejercicio4" onclick="Ejercicio4()">
+        4.- Utilizando la sentencia if detener el conteo regresivo cuando el valor llegue a cero y cambiar el texto de
+        bomba por "BOOM!" y el background-color de body a rojo.</p>
+
+    <h1 id="header-timer"> ¡¡¡ La bomba !!! </h1>
+    <h2 id="timer">4</h2>
+    <p id="ejercicio5" onclick="Ejercicio5()">
+        Ejercicio 5:
+    </p>
+    <ul>
+        <li>El siguiente código corresponde a una calculadora incompleta.</li>
+        <li>El botón '=' funciona evaluando la expresión dentro del input de texto.</li>
+        <li>Se requiere:
+            <ul>
+                <li>Al presionar un dígito u operador este debe ser agregado al input.</li>
+                <li>Agregar los dígitos faltantes.</li>
+                <li>Agregar operadores faltantes (multiplicación y división).</li>
+                <li>Agregar un botón para limpiar el input.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <input type="text" name="calculator" value="">
+    <br>
+    <button class="btn" type="button" name="button">1</button>
+    <button class="btn" type="button" name="button">2</button>
+    <button class="btn" type="button" name="button">3</button>
+    <button class="btn" type="button" name="button">4</button>
+    <button class="btn" type="button" name="button">5</button>
+    <button class="btn" type="button" name="button">6</button>
+    <button class="btn" type="button" name="button">7</button>
+    <button class="btn" type="button" name="button">8</button>
+    <button class="btn" type="button" name="button">9</button>
+    <br>
+    <button class="btn" type="button" name="button">+</button>
+    <button class="btn" type="button" name="button">-</button>
+    <button class="btn" type="button" name="button">/</button>
+    <button class="btn" type="button" name="button">*</button>
+    <br>
+    <button class="result" type="button" name="result" onclick="calcTotal()">=</button>
+    <button class="result" type="button" name="result" onclick="limpiar()">Clear</button>
+    <p id="ejercicio6">
+        Ejercicio 6:
+        Se tiene la siguiente vista y script que incluye un arreglo.
+
+    </p>
+    <ul>
+        <li>
+            <p>Crear una función llamada sortList() la cual debe ser ejecutada al presionar el botón “Clasificar
+                Arreglo”.</p>
+        </li>
+        <li>
+            <p>La función debe iterar el arreglo:</p>
+            <ul>
+                <li>Si el elemento del array es un número impar debe ser agregado a la lista ‘<strong>Impares</strong>’.</li>
+                <li>Si el elemento es un número par debe ser agregado a la lista ‘<strong>Pares</strong>’.</li>
+                <li>Si el elemento es un string debe ser agregado a la lista ‘<strong>Strings</strong>’.</li>
+            </ul>
+        </li>
+        <li>
+            <p>Los elementos deben ser agregados de manera dinámica manipulando el <strong>DOM</strong> mediante
+                <strong>JS</strong>.</p>
+        </li>
+    </ul>
+
+    <button onclick="sortList()">Clasificar Arreglo</button>
+    <ul id="par">
+        <strong>Pares</strong>
+    </ul>
+    <ul id="impar">
+        <strong>Impares</strong>
+    </ul>
+    <ul id="string">
+        <strong>Strings</strong>
+    </ul>
+
+    <p id="ejercicio7" onclick="Ejercicio7()">
+        Ejercicio 7:
+        Se tiene la siguiente vista y script que incluye un arreglo.
+    </p>
+    <ul>
+        <li>
+            <p>Agregar al script las instrucciones necesarias para que, al cargar la página, los objetos que poseen
+                <strong>completed:false</strong> sean agregados de manera automática a la lista "<strong>To Do</strong>".</p>
+        </li>
+        <li>
+            <p>Los objetos que posean <strong>completed:true</strong> deben ser agregados a la lista "<strong>Done</strong>"</p>
+        </li>
+        <li>
+            <p>Generar un método llamado <strong>completeTask()</strong> que reciba como argumento el <strong>id</strong>
+                del objeto y permita marcar un objeto (tarea) como completado, es decir:</p>
+            <ul>
+                <li>El objeto debe cambiar estado a <strong>completed:true</strong>.</li>
+                <li>La tarea debe ser removida de la lista "<strong>To Do</strong>".</li>
+                <li>La tarea debe ser agregada, de manera dinámica, a la lista "<strong>Done</strong>".</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ol class="todo" id="todo">
+        <h3>To Do:</h3>
+    </ol>
+
+    <ol class="done" id="done">
+        <h3>Done:</h3>
+    </ol>
 
 </body>
 
 <script type="text/javascript">
 
-function Ejercicio1(){
-    $('#ejercicio1').css("font-size",20 + "px");
-    $('#ejercicio1').css("color", "green");
-    a = parseInt(prompt("ingresa un número"));
-    b = parseInt(prompt("ingresa otro número"));
-    alert("la suma es: " + (a + b) );
-}
-function Ejercicio2()
-{
-    $('#ejercicio2').css("font-size",20 + "px");
-    $('#ejercicio2').css("color", "green");
-   var edad = prompt("Ingresa tu edad");
-      if (parseInt(edad) >= 18){
-          alert('Eres mayor de edad');
-      }
-      else
-      {
-        alert('Eres menor de edad');
-      }
-}
-function Ejercicio3()
-{
-    $('#ejercicio3').css("font-size",20 + "px");
-    $('#ejercicio3').css("color", "green");
-    var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
-      var parent_tag = document.getElementById('dias');
-      dias.forEach(function(x){
+    function Ejercicio1() {
+        $('#ejercicio1').css("font-size", 20 + "px");
+        $('#ejercicio1').css("color", "green");
+        a = parseInt(prompt("ingresa un número"));
+        b = parseInt(prompt("ingresa otro número"));
+        alert("la suma es: " + (a + b));
+    }
+    function Ejercicio2() {
+        $('#ejercicio2').css("font-size", 20 + "px");
+        $('#ejercicio2').css("color", "green");
+        var edad = prompt("Ingresa tu edad");
+        if (parseInt(edad) >= 18) {
+            alert('Eres mayor de edad');
+        }
+        else {
+            alert('Eres menor de edad');
+        }
+    }
+    function Ejercicio3() {
+        $('#ejercicio3').css("font-size", 20 + "px");
+        $('#ejercicio3').css("color", "green");
+        var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+        var parent_tag = document.getElementById('dias');
+        dias.forEach(function (x) {
 
-      
-        var doc_element = document.createElement("p");
-        node = document.createTextNode(x);
-        doc_element.appendChild(node);
-        parent_tag.appendChild(doc_element);
-      });
 
-}
-function Ejercicio4(){
-    $('#ejercicio4').css("font-size",20 + "px");
-    $('#ejercicio4').css("color", "green");
-    var timer_tag = document.getElementById('timer');
+            var doc_element = document.createElement("p");
+            node = document.createTextNode(x);
+            doc_element.appendChild(node);
+            parent_tag.appendChild(doc_element);
+        });
+
+    }
+    function Ejercicio4() {
+        $('#ejercicio4').css("font-size", 20 + "px");
+        $('#ejercicio4').css("color", "green");
+        var timer_tag = document.getElementById('timer');
         var timer = timer_tag.innerHTML;
         timer = parseInt(timer);
-    var MyVar = setInterval(function(){
-        
-          timer = timer - 1;
-          if (timer == 0){ $('#header-timer').text('BOOM!!'); StopTimer(MyVar);}
-          timer_tag.innerHTML = timer
-          
+        var MyVar = setInterval(function () {
+
+            timer = timer - 1;
+            if (timer == 0) { $('#header-timer').text('BOOM!!'); StopTimer(MyVar); }
+            timer_tag.innerHTML = timer
+
         }, 1000);
-       
 
-}
 
-function StopTimer(MyVar){
+    }
+    // Ejercicio5
+    function StopTimer(MyVar) {
 
-    clearInterval(MyVar);
-}
-function calcTotal(){
-    calcTotal();
-}
-function limpiar()
-{
-    $('input[name=calculator]').val('');
-    str = '';
-}
-var str = "";
-$("button[name^=button]").click(function(e) {
+        clearInterval(MyVar);
+    }
+    function calcTotal() {
+        calcTotal();
+    }
+    function limpiar() {
+        $('input[name=calculator]').val('');
+        str = '';
+    }
+    var str = "";
+    $("button[name^=button]").click(function (e) {
 
         str = str + $(this).text();
         $('input[name=calculator]').val(str);
-});
+    });
 
-
-
-
-     var result = document.getElementsByName("result")[0];
-      var calculator = document.getElementsByName("calculator")[0];
-      var calcTotal = function(){
+    var result = document.getElementsByName("result")[0];
+    var calculator = document.getElementsByName("calculator")[0];
+    var calcTotal = function () {
         calculator.value = eval(calculator.value);
-      }
-   
-    </script>
+    }
+    // Ejercicio5
+
+    function sortList() {
+        $('#ejercicio6').css("font-size", 20 + "px");
+        $('#ejercicio6').css("color", "green");
+
+        var arr = [1, 'dos', 'tres', 4, 5, 6, 'siete', 8, 9, 'diez'];
+        arr.forEach(element => {
+
+            switch (typeof element) {
+                case "string":
+                    $("#string").append('<li>' + element + '</li>');
+                    break;
+                case "number":
+
+                    if ((element % 2) == 0) {
+                        $("#par").append('<li>' + element + '</li>');
+                    }
+                    else {
+                        $("#impar").append('<li>' + element + '</li>');
+
+                    }
+                    break;
+
+            }
+
+
+        });
+
+
+    }
+
+    var asdf = [{
+        "completed": false,
+        "id": 1,
+        "title": "Delectus aut autem",
+    },
+    {
+        "completed": false,
+        "id": 2,
+        "title": "Quis ut nam facilis et officia qui",
+    },
+    {
+        "completed": false,
+        "id": 3,
+        "title": "Fugiat veniam minus",
+    },
+    {
+        "completed": true,
+        "id": 4,
+        "title": "Et porro tempora",
+    },
+    {
+        "completed": false,
+        "id": 5,
+        "title": "Laboriosam mollitia et enim quasi adipisci quia provident illum",
+    },
+    {
+        "completed": false,
+        "id": 6,
+        "title": "Qui ullam ratione quibusdam voluptatem quia omnis",
+    },
+    {
+        "completed": false,
+        "id": 7,
+        "title": "Illo expedita consequatur quia in",
+        "userId": 1
+    },
+    {
+        "completed": true,
+        "id": 8,
+        "title": "Quo adipisci enim quam ut ab",
+    },
+    {
+        "completed": false,
+        "id": 9,
+        "title": "Molestiae perspiciatis ipsa",
+    },
+    {
+        "completed": true,
+        "id": 10,
+        "title": "Illo est ratione doloremque quia maiores aut",
+    }];
+
+
+    for (let index = 0; index < asdf.length; index++) {
+        const completed = asdf[index].completed;
+        const id = asdf[index].id;
+        const title = asdf[index].title;
+        if (completed == false) {
+            $("#todo").append('<li>ID:' + id + '- Title:' + title + '<button onclick="completeTask(' + id + ')">  >> </button></li> ');
+        }
+        else {
+            $("#done").append('<li>ID:' + id + '- Title:' + title + '<button onclick="completeTask(' + id + ')"> << </button></li>');
+        }
+
+    }
+
+    function completeTask(id) {
+        console.log(id)
+
+    }
+</script>
+<button onclick="completeTask(id)"> </button>
 
 </html>
